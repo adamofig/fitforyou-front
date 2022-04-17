@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'fitforyou'`, () => {
+  it(`should have as title 'simmetrify'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('fitforyou');
+    expect(app.title).toEqual('simmetrify');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('fitforyou app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('simmetrify app is running!');
   });
 });
