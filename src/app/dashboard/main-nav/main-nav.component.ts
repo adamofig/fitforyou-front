@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RoutesEnum } from '../../core/enums';
+import { RoutesEnum } from 'src/app/core/enums';
 
 @Component({
   selector: 'app-main-nav',
