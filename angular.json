@@ -110,6 +110,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "simmetrify:build:production",
+            "firebaseProject": "simmetrify-dev",
+            "firebaseHostingSite": "simmetrify-dev"
+          }
         }
       }
     }

@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: 'AIzaSyBdr9GgVUXN6BLXzOqsWiKYLZFfJWTY4Q4',
+    authDomain: 'simmetrify-dev.firebaseapp.com',
+    projectId: 'simmetrify-dev',
+    storageBucket: 'simmetrify-dev.appspot.com',
+    messagingSenderId: '917674363501',
+    appId: '1:917674363501:web:da36d27261ce3a68480d64',
+    measurementId: 'G-5ZHBY8MD8E',
+  },
 };
 
 /*

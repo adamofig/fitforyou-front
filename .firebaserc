@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "simmetrify-pro"
+    "default": "simmetrify-dev"
+  },
+  "targets": {
+    "simmetrify-dev": {
+      "hosting": {
+        "simmetrify": [
+          "simmetrify-dev"
+        ]
+      }
+    }
   }
 }

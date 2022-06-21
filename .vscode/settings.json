@@ -1,4 +1,8 @@
 {
+  "[html]": {
+    "editor.formatOnSave":true,
+    "editor.formatOnPaste": true
+  },
   "[typescript]": {
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true

@@ -10,9 +10,21 @@ import { StyleClassModule } from 'primeng/styleclass';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { MenuModule } from 'primeng/menu';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { PicturesComponent } from './pictures/pictures.component';
+import { HomeComponent } from './home/home.component';
+import { FileUploadModule } from 'primeng/fileupload';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
+import { getStorage, provideStorage } from '@angular/fire/storage';
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [
+    DashboardComponent,
+    MainNavComponent,
+    PicturesComponent,
+    HomeComponent,
+  ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
@@ -24,6 +36,9 @@ import { MenuModule } from 'primeng/menu';
     RippleModule,
     MenuModule,
     DashboardRoutingModule,
+    HttpClientModule,
+    FileUploadModule,
+    provideStorage(() => getStorage()),
   ],
 })
 export class DashboardModule {}
