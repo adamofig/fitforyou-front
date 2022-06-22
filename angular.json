@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
-    "simmetrify": "apps/simmetrify"
+    "simmetrify": "apps/simmetrify",
+    "simmetrify-landing": "apps/simmetrify-landing",
+    "simmetrify-landing-e2e": "apps/simmetrify-landing-e2e"
   }
 }
