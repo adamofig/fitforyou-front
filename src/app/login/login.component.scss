@@ -1,0 +1,15 @@
+.main-content {
+  background: linear-gradient(
+      to bottom,
+      rgba(216, 25, 133, 0.212),
+      rgba(4, 131, 243, 0.308)
+    ),
+    url("/assets/images/blocks/signin/signin-2.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #cccccc;
+  background-size: cover; /* Resize the background image to cover the entire container */
+  height: 100vh;
+}

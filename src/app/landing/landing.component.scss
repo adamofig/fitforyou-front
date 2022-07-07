@@ -1,0 +1,18 @@
+.header{
+  display: flex; justify-content: space-between; align-items: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.logo{
+  display: flex; align-items: center;
+}
+
+.text-logo{
+  color: purple;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 10px;
+}
