@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public signIn() {
-    this.firebaseAuthService.signWithProvider('google');
+  public async signIn() {
+    await this.firebaseAuthService.signWithProvider('google');
   }
 }

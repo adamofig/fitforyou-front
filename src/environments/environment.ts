@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  backUrl: 'https://app-6jy7kph6da-uc.a.run.app',
+  // backUrl: 'http://localhost:8000',
   firebaseConfig: {
     apiKey: 'AIzaSyBdr9GgVUXN6BLXzOqsWiKYLZFfJWTY4Q4',
     authDomain: 'simmetrify-dev.firebaseapp.com',

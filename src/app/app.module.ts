@@ -16,6 +16,8 @@ import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { provideAuth, getAuth } from '@angular/fire/auth';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InjectorService } from './core/injector.service';
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
@@ -26,14 +28,14 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
     RippleModule,
     StyleClassModule,
     CheckboxModule,
-    // AngularFireModule.initializeApp(environment.firebaseConfig),
-    // provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    HttpClientModule,
 
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideStorage(() => getStorage()),
     provideAuth(() => getAuth()),
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InjectorService, multi: true },
     { provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig },
   ],
   bootstrap: [AppComponent],

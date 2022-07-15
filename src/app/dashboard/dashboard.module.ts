@@ -17,6 +17,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
 import { getStorage, provideStorage } from '@angular/fire/storage';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
     MainNavComponent,
     PicturesComponent,
     HomeComponent,
+    TestComponent,
   ],
   imports: [
     CommonModule,

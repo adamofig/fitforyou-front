@@ -1,24 +1,30 @@
 import { Injectable } from '@angular/core';
 
+import { take, concatMap } from 'rxjs/operators';
+
 import {
   Auth,
   authState,
-  createUserWithEmailAndPassword,
   FacebookAuthProvider,
   GoogleAuthProvider,
-  IdTokenResult,
-  sendPasswordResetEmail,
-  signInWithEmailAndPassword,
   signInWithPopup,
 } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { RoutesEnum } from './enums';
+import { from } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FirebaseAuthService {
   constructor(private auth: Auth, private router: Router) {}
+
+  public authState$ = authState(this.auth);
+
+  public tokenId$ = this.authState$.pipe(
+    take(1),
+    concatMap((auth) => from(auth!.getIdToken()))
+  );
 
   public async signWithProvider(privider: 'google' | 'facebook') {
     let authResult = null;
