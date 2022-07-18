@@ -18,11 +18,14 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InjectorService } from './core/injector.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+
     AppRoutingModule,
     ButtonModule,
     RippleModule,

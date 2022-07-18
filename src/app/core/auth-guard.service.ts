@@ -15,23 +15,33 @@ import { concatMap, map } from 'rxjs/operators';
 
 import { FirebaseAuthService } from '../core/firebase-auth.service';
 import { UserService } from './data-services/user.service';
-import { AuthRoute } from './routes.enums';
+import { AuthRoute, RoutesEnum } from './enums';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuardService implements CanActivate {
+export class AuthGuardService implements CanActivate, CanLoad {
   constructor(
     private fbAuthService: FirebaseAuthService,
     private router: Router,
     private userService: UserService
   ) {}
+  canLoad(_route: Route, _segments: UrlSegment[]) {
+    return this.fbAuthService.authState$.pipe(
+      map((isAuth) => {
+        debugger;
+        if (isAuth) {
+          return true;
+        }
+        return this.router.parseUrl(`${RoutesEnum.Dashboard}`);
+      })
+    );
+  }
 
   public canActivate(
     _next: ActivatedRouteSnapshot,
     _state: RouterStateSnapshot
   ): any {
-    debugger;
     const isUserLoaded = !!this.userService.user;
     if (isUserLoaded) {
       return of(true);

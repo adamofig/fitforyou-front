@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from './core/auth-guard.service';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'landing',
+    redirectTo: 'dashboard',
     pathMatch: 'full',
   },
   {
@@ -18,7 +19,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('./landing/landing.module').then((m) => m.LandingModule),
   },
-  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+    canLoad: [AuthGuardService],
+  },
   { path: '**', component: NotFoundComponent },
 ];
 

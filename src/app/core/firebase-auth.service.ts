@@ -38,4 +38,10 @@ export class FirebaseAuthService {
     console.log(authResult);
     this.router.navigateByUrl('/' + RoutesEnum.Dashboard);
   }
+
+  public async logOut() {
+    // * clean state
+    await this.auth.signOut();
+    this.router.navigateByUrl('/' + RoutesEnum.Login);
+  }
 }

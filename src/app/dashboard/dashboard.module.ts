@@ -15,7 +15,6 @@ import { PicturesComponent } from './pictures/pictures.component';
 import { HomeComponent } from './home/home.component';
 import { FileUploadModule } from 'primeng/fileupload';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { TestComponent } from './test/test.component';
 
@@ -36,10 +35,11 @@ import { TestComponent } from './test/test.component';
     StyleClassModule,
     ButtonModule,
     RippleModule,
-    MenuModule,
     DashboardRoutingModule,
     HttpClientModule,
     FileUploadModule,
+    MenuModule,
+
     provideStorage(() => getStorage()),
   ],
 })
